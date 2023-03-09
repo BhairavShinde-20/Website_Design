@@ -1,0 +1,135 @@
+
+.nav-header img{
+  width: 87px;
+  height: 70px;
+  padding: 10px;
+  animation: rotation 8s infinite linear;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.nav {
+  height: 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+header .logo h1 {
+  color: #133b4f;
+}
+.name {
+  margin-left: 2rem;
+  font-size: 0.8rem;
+  color: #133b4f;
+}
+.nav > .nav-header {
+  display: flex;
+}
+.title {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 1.8rem;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: black;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: flex;
+  justify-content: space-around;
+  flex: 0.5;
+  cursor: pointer;
+}
+.nav > .nav-links > a {
+  text-decoration: none;
+  color: black;
+}
+.nav > .nav-links > a::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 0;
+  background: #c4c4f7;
+  transition: all 0.5s;
+}
+.nav > .nav-links > a:hover::after {
+  width: 100%;
+}
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width: 868px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav .nav-header {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid black;
+    cursor: pointer;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    text-align: center;
+    display: block;
+    width: 100%;
+    background-color: white;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 100px;
+    left: 0px;
+    line-height: 4rem;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 302px);
+    overflow-y: auto;
+  }
+}
+@media (max-width: 600px) {
+  .title {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  .rotate {
+    width: 65px;
+  }
+}
+@media (max-width: 330px) {
+}
